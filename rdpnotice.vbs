@@ -1,2 +1,2 @@
 on error resume next
-createobject("wscript.shell").run "seclogin.bat",0 
+createobject("wscript.shell").run "rdpnotice.bat",0 
