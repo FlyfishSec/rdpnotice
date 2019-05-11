@@ -2,22 +2,21 @@
 for /f "tokens=2 delims=\" %%i in ('whoami') do set curuser=%%i
 for /f "tokens=15" %%i in ('ipconfig /all ^| find /i "IP Address"') do set ip3=%%i
 for /f "tokens=16 delims=( " %%i in ('ipconfig /all ^| find /i "IPv4"') do set ip=%%i
-for /f "tokens=4 delims=: " %%i in ('netstat -n^|find ":3389"') do set cip=%%i
-ECHO NameSpace = "http://schemas.microsoft.com/cdo/configuration/" >logininfo.vbs
-ECHO Set Email = CreateObject("CDO.Message") >>logininfo.vbs
-ECHO Email.From = "mailaccount@163.com" >>logininfo.vbs
-ECHO Email.To = "receive@qq.com" >>logininfo.vbs
-ECHO Email.Subject = "9ºÅ·þÎñÆ÷ÓÐÈËµÇÂ½£¬Çë×¢Òâ£¡£¡£¡" >>logininfo.vbs
-ECHO Email.Textbody = "»úÆ÷I P£º%ip%%ip3%£¬µÇÂ½ÈÕÆÚ£º%date:~0,10% %time:~0,-3%,¿Í»§¶ËIP£º%cip%" >>logininfo.vbs
-ECHO With Email.Configuration.Fields >>logininfo.vbs
-ECHO .Item(NameSpace^&"sendusing") = 2 >>logininfo.vbs
-ECHO .Item(NameSpace^&"smtpserver") = "smtp.163.com" >>logininfo.vbs
-ECHO .Item(NameSpace^&"smtpserverport") =25 >>logininfo.vbs
-ECHO .Item(NameSpace^&"smtpauthenticate") = 1 >>logininfo.vbs
-ECHO .Item(NameSpace^&"sendusername") = "mailaccount@163.com"  >>logininfo.vbs
-ECHO .Item(NameSpace^&"sendpassword") = "mailpassword" >>logininfo.vbs
-ECHO .Update >>logininfo.vbs
-ECHO End With >>logininfo.vbs
-ECHO Email.Send >>logininfo.vbs
-wscript logininfo.vbs&&del /s /q logininfo.vbs>nul
-
+for /f "tokens=4 delims=: " %%i in ('netstat -n^|find ":16109"') do set cip=%%i
+ECHO NameSpace = "http://schemas.microsoft.com/cdo/configuration/" >rdpnotice.vbs
+ECHO Set Email = CreateObject("CDO.Message") >>rdpnotice.vbs
+ECHO Email.From = "seclogininfo@163.com" >>rdpnotice.vbs
+ECHO Email.To = "hdlbrjho@qq.com" >>rdpnotice.vbs
+ECHO Email.Subject = "9å·æœåŠ¡å™¨æœ‰äººç™»é™†ï¼ï¼ï¼" >>rdpnotice.vbs
+ECHO Email.Textbody = "æœºå™¨I Pï¼š%ip%%ip3%ï¼Œç™»é™†æ—¥æœŸï¼š%date:~0,10% %time:~0,-3%,å®¢æˆ·ç«¯IPï¼š%cip%" >>rdpnotice.vbs
+ECHO With Email.Configuration.Fields >>rdpnotice.vbs
+ECHO .Item(NameSpace^&"sendusing") = 2 >>rdpnotice.vbs
+ECHO .Item(NameSpace^&"smtpserver") = "smtp.163.com" >>rdpnotice.vbs
+ECHO .Item(NameSpace^&"smtpserverport") =25 >>rdpnotice.vbs
+ECHO .Item(NameSpace^&"smtpauthenticate") = 1 >>rdpnotice.vbs
+ECHO .Item(NameSpace^&"sendusername") = "seclogininfo@163.com"  >>rdpnotice.vbs
+ECHO .Item(NameSpace^&"sendpassword") = "seclogininfo1!" >>rdpnotice.vbs
+ECHO .Update >>rdpnotice.vbs
+ECHO End With >>rdpnotice.vbs
+ECHO Email.Send >>rdpnotice.vbs
+wscript rdpnotice.vbs&&del /s /q rdpnotice.vbs>nul
