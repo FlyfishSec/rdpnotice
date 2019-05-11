@@ -1,2 +1,2 @@
-#rdpnotice
+# rdpnotice
 3389远程登录邮件提醒.一个用于监控3389登录的脚本，配置发件邮箱账号密码，将rdpnotice.vbs放置于启动项
